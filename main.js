@@ -1,5 +1,4 @@
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { getFirestore , collection, getDocs, getDoc} from "firebase/firestore";
 const firebaseConfig = {
   apiKey: "AIzaSyDDBikA_w9r615SzzLs1Cz1_r0wsGxiEBM",
@@ -13,11 +12,13 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
 const db = getFirestore(app);
 const blogCol = collection(db, 'articles');
 const snapshot = await getDocs(blogCol)
-prompt(snapshot.docs.join(""))
+const articles = snapshot.docs.map(doc => doc.data());
+console.log('Article sayısı: ',articles.length);
+console.log(articles);
+
 
 $(document).ready(function(){
     var zindex = 10;
