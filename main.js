@@ -1,3 +1,24 @@
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+import { getFirestore , collection, getDocs, getDoc} from "firebase/firestore";
+const firebaseConfig = {
+  apiKey: "AIzaSyDDBikA_w9r615SzzLs1Cz1_r0wsGxiEBM",
+  authDomain: "personal-website-c93cc.firebaseapp.com",
+  projectId: "personal-website-c93cc",
+  storageBucket: "personal-website-c93cc.appspot.com",
+  messagingSenderId: "1013766712301",
+  appId: "1:1013766712301:web:8f1c86eaf7b2836fbe55e4",
+  measurementId: "G-JP734W8Q0R"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+const db = getFirestore(app);
+const blogCol = collection(db, 'articles');
+const snapshot = await getDocs(blogCol)
+prompt(snapshot.docs.join(""))
+
 $(document).ready(function(){
     var zindex = 10;
     
