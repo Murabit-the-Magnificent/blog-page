@@ -1,5 +1,5 @@
-import BlogCard from 'blog-page/js/main.js';
-import Blog from 'blog-page/js/blog_main.js';
+import BlogCard from 'assets/js/main.js';
+import Blog from 'assets/js/blog_main.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
 import { getFirestore , collection, doc, getDocs, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 export default class Database{

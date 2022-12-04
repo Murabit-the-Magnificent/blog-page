@@ -1,4 +1,4 @@
-import Animation from 'blog-page/js/animation.js';
+import Animation from 'assets/js/animation.js';
 export default class BlogCard {
   constructor(url, title, body, id) {
     this.url = url;
