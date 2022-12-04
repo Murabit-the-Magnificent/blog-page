@@ -28,7 +28,7 @@ export default class BlogCard {
       </div>
       <div class="card-flap flap2">
         <div class="card-actions">
-          <a href="#" class="btn">Read more</a>
+          <a href="#/${id}" class="btn">Read more</a>
         </div>
       </div>
     </div>
