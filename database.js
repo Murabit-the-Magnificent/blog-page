@@ -1,9 +1,10 @@
-import BlogCard from './blog_card.js';
+import BlogCard from './main.js';
+import Blog from './blog_main.js';
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-import { getFirestore , collection, getDocs, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
+import { getFirestore , collection, doc, getDocs, getDoc} from "https://www.gstatic.com/firebasejs/9.14.0/firebase-firestore.js";
 export default class Database{
     constructor(){
-        const firebaseConfig = {
+        this.firebaseConfig = {
             apiKey: "AIzaSyDDBikA_w9r615SzzLs1Cz1_r0wsGxiEBM",
             authDomain: "personal-website-c93cc.firebaseapp.com",
             projectId: "personal-website-c93cc",
@@ -12,24 +13,24 @@ export default class Database{
             appId: "1:1013766712301:web:8f1c86eaf7b2836fbe55e4",
             measurementId: "G-JP734W8Q0R"
         };
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
-        getArticles();
-        async function getArticles() {
-            const articleCol = collection(db, 'articles');
+        this.app = initializeApp(this.firebaseConfig);
+        this.db = getFirestore(this.app);
+    }
+        async getArticles() {
+            const articleCol = collection(this.db, 'articles');
             const snapshot = await getDocs(articleCol)
             const articles = snapshot.docs.map(doc => doc.data());
             articles.forEach(article => {
-                const blog = new BlogCard(article.imageURL, article.title, article.body, article.id);
+                const blog_page = new BlogCard(article.imageURL, article.title, article.body, article.id);
             });
         }
-        async function getArticle(id) {
-            const docRef = doc(db, "article", id);
-            const docSnap = await getDoc(docRef);
+        async getArticle(id) {
+            const docRef = doc(this.db, 'article', id);
             try {
                 const docSnap = await getDoc(docRef);
                 if(docSnap.exists()) {
-                    console.log(docSnap.data());
+                    const article = docSnap.data();
+                    const blog = new Blog(article.imageURL, article.title, article.body);
                 } else {
                     console.log("Document does not exist")
                 }
@@ -38,5 +39,5 @@ export default class Database{
                 console.log(error)
             }
         }
-    }
+    
 }

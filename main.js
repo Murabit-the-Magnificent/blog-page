@@ -9,7 +9,6 @@ export default class BlogCard {
     const comment = document.createElement('div');
     comment.classList.add("card");
     comment.innerHTML = `
-   
     <div class="card__image-holder">
       <img class="card__image" src="${url}" alt="wave" />
     </div>
@@ -28,7 +27,7 @@ export default class BlogCard {
       </div>
       <div class="card-flap flap2">
         <div class="card-actions">
-          <a href="${id}.html" class="btn">Read more</a>
+          <a href="" onClick="parent.location='blog.html?number=${id}'" class="btn">Read more</a>
         </div>
       </div>
     </div>
