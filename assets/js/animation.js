@@ -1,11 +1,11 @@
-export default class CardAnimation{
-        constructor(){
+ export default class CardAnimation{
+         constructor(){
             $(document).ready(function () {
                 var zindex = 10;
                 var examples = document.querySelectorAll(".card__image-holder");
                 var examples2=document.querySelectorAll(".card-title");
                 var i = 1;
-              
+                
                 examples.forEach(function (example) {
                   $(example).fadeIn(i * 1000).css("display","block");
                   i++;
@@ -14,13 +14,15 @@ export default class CardAnimation{
               
                   });
                 });
+
+                
               
-                $("div.card").click(function (e) {
+                $(".toggle-info").click(function (e) {
                   e.preventDefault();
-              
+                  console.log("Çalıştı");
                   var isShowing = false;
               
-                  if ($(this).hasClass("show")) {
+                  if ($(".card").hasClass("show")) {
                     isShowing = true
                   }
               
@@ -35,9 +37,10 @@ export default class CardAnimation{
                           .removeClass("showing");
                     } else {
                       // this card isn't showing - get in with it
-                      $(this)
-                          .css({ zIndex: zindex })
-                          .addClass("show");
+                      $(".card")
+                          .css({ zIndex: zindex });
+                          $(".card").addClass("show");
+                       
               
                     }
               
@@ -47,7 +50,7 @@ export default class CardAnimation{
                     // no cards in view
                     $("div.cards")
                         .addClass("showing");
-                    $(this)
+                    $(".card")
                         .css({ zIndex: zindex })
                         .addClass("show");
               
@@ -55,6 +58,9 @@ export default class CardAnimation{
                   }
               
                 });
-              });
-        }
-}
+
+            });
+             
+         }
+ }
+
