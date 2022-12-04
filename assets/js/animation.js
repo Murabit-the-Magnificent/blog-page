@@ -19,7 +19,6 @@
               
                 $(".toggle-info").click(function (e) {
                   e.preventDefault();
-                  console.log("Çalıştı");
                   var isShowing = false;
               
                   if ($(".card").hasClass("show")) {
