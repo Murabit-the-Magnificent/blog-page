@@ -1,3 +1,4 @@
+import Animation from './animation.js';
 export default class Blog {
   constructor(url, title, body, id) {
     this.url = url;
@@ -35,5 +36,6 @@ export default class Blog {
     `;
 
     selector.appendChild(comment);
+    const animation = new Animation();
   }
 }
