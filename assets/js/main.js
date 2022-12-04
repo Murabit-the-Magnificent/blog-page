@@ -27,7 +27,7 @@ export default class BlogCard {
       </div>
       <div class="card-flap flap2">
         <div class="card-actions">
-          <a href="" onClick="parent.location='../blog.html?number=${id}'" class="btn">Read more</a>
+          <a href="" onClick="parent.location='/blog-page/assets/blog.html?number=${id}'" class="btn">Read more</a>
         </div>
       </div>
     </div>
