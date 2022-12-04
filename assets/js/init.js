@@ -1,3 +1,3 @@
-import Database from "assets/js/database.js";
+import Database from "/database.js";
 const database = new Database();
 database.getArticles();
