@@ -1,4 +1,4 @@
-import Database from "database.js";
+import Database from "blog-page/js/database.js";
 const database = new Database();
 var params = {};
 location.search.slice(1).split("&").forEach(function(pair) {
