@@ -14,10 +14,9 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const blogCol = collection(db, 'articles');
-const snapshot = await getDocs(blogCol)
+const articleCol = collection(db, 'articles');
+const snapshot = await getDocs(articleCol)
 const articles = snapshot.docs.map(doc => doc.data());
-console.log('Article sayısı: ',articles.length);
 articles.forEach(article => {
     const blog = new BlogCard(article.imageURL, article.title, article.body, article.id);
 });

@@ -7,13 +7,9 @@ export default class CardAnimation{
                 var i = 1;
               
                 examples.forEach(function (example) {
-              
-                  console.log(example);
                   $(example).fadeIn(i * 1000).css("display","block");
                   i++;
                   examples2.forEach(function (example2) {
-              
-                    console.log(example2);
                     $(example2).fadeIn(i * 1000).css("display","block");
               
                   });

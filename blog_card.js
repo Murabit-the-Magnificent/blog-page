@@ -1,5 +1,5 @@
 import Animation from './animation.js';
-export default class Blog {
+export default class BlogCard {
   constructor(url, title, body, id) {
     this.url = url;
     this.title = title;
