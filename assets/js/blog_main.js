@@ -6,6 +6,7 @@ export default class Blog{
         this.content = content;
 
         $(".blog-img").css("background", "url(" + url + ")");
+        $(".blog-hero").css("background", "url(" + url + ")");
         const md = content;
         var html = marked.parse(content);
         
