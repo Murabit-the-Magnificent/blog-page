@@ -5,8 +5,8 @@ export default class Blog{
         this.date = date;
         this.content = content;
 
-        var blog_image = document.getElementById('blog-image-id');
-        blog_image.src = url;
+        var blog_image = document.getElementsByClassName('blog-img');
+        blog_image[0].src = url;
         const md = content;
         var html = marked.parse(content);
         
