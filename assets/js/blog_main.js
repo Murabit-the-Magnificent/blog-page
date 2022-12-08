@@ -4,7 +4,8 @@ export default class Blog{
         this.title = title;
         this.date = date;
         this.content = content;
-
+        converted_date = new Date(date);
+        date = converted_date.toDateString();
         $(".blog-img").css("background", "url(" + url + ")");
         $(".blog-hero").css("background", "url(" + url + ")");
         const md = content;
