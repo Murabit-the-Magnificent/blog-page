@@ -30,7 +30,7 @@ export default class Database{
                 const docSnap = await getDoc(docRef);
                 if(docSnap.exists()) {
                     const article = docSnap.data();
-                    const blog = new Blog(article.imageURL, article.title, article.body);
+                    const blog = new Blog(article.imageURL, article.title, article.date, article.body);
                 } else {
                     console.log("Document does not exist")
                 }
