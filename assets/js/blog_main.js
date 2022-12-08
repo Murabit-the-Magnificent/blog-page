@@ -5,8 +5,7 @@ export default class Blog{
         this.date = date;
         this.content = content;
 
-        var blog_image = document.getElementsByClassName('blog-img');
-        blog_image[0].src = url;
+        $(".blog-img").css("background", "url(" + url + ")");
         const md = content;
         var html = marked.parse(content);
         
