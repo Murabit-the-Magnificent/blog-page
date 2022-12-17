@@ -82,11 +82,9 @@
     z-index: 1;
   }
   div.card img {
-    max-width: 300px;
+    width:100%;
+    aspect-ratio:1/1;
   }
-    .card__image{
-        object-fit:cover;
-    }
 
   div.card .card__image-holder {
     background: rgba(0, 0, 0, 0.1);
