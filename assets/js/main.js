@@ -10,7 +10,7 @@ export default class BlogCard {
     comment.classList.add("card");
     comment.innerHTML = `
     <div class="card__image-holder">
-      <img class="card__image" src="${url}" alt="wave" />
+      <img class="card__image" src="${url}" alt="blog_image" />
     </div>
     <div class="card-title">
       <a href="#" class="toggle-info btn">
